@@ -1,13 +1,12 @@
 # Landing Page Project
 
-## Table of Contents
-
-* [Instructions](#instructions)
-
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+This project is a dynamic landing page that enable the user to interact and add new section instantly.
+The navigation bar updates with the active section and the new created sections using the IntersectionObserver API
+I prefered using .insertAdjacentHTML() method instead of the .appendChild()
+I am using the smooth scroll behavior to scroll between different sections
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Other Framworks Used
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+-Bootstrap

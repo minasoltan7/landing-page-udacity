@@ -57,32 +57,27 @@ let createNavbar = () => {
 }
 createNavbar();
 
-// adding section on click to the "Add Section" button  
-let addSectionButton = document.getElementById("add-section")
-addSectionButton.addEventListener("click", () => {
-  // using the createDynamic Section to create the new added section
-  createDynamicSection();
-  // Deleting all "li" elements  in the "ul" to create a new updated navbar with the new "li" created 
-  navBar.innerHTML = "";
-  createNavbar();
-  observingContent();
-})
 
 
 
 
-// Add class 'active' to section when near top of viewport
+// Add class 'active' to section when near top of viewport.
+// Using IntersectionObserver method instead of the getBoundingClientRect method.  
+// and instantiating an Observer class from it.
+// using built in .observe method to view the port and observe the active section. 
 const observingContent = () => {
   let observer = new IntersectionObserver(
     function (entries) {
       entries.forEach((entry) => {
         let activeLink = navBar.querySelector(`[data-nav=${entry.target.id}]`);
+        // this line to check if section is in the viewport or not 
         if (entry.isIntersecting) {
+          // if true change the class of the selected section to active section
           entry.target.classList.add("your-active-class");
-          activeLink.classList.add("active-link");
+          activeLink.classList.add("active-section");
         } else {
           entry.target.classList.remove("your-active-class");
-          activeLink.classList.remove("active-link")
+          activeLink.classList.remove("active-section")
         }
       })
     }, {
@@ -100,6 +95,16 @@ observingContent();
 
 
 
+// adding section on click to the "Add Section" button  
+let addSectionButton = document.getElementById("add-section")
+addSectionButton.addEventListener("click", () => {
+  // using the createDynamic Section to create the new added section
+  createDynamicSection();
+  // Deleting all "li" elements  in the "ul" to create a new updated navbar with the new "li" created 
+  navBar.innerHTML = "";
+  createNavbar();
+  observingContent();
+})
 
 
 

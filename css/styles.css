@@ -101,14 +101,13 @@ section {
   border-radius: 5px;
 }
 
-.navbar__menu .active-link {
+.navbar__menu .active-section {
   text-decoration: none;
   margin: 8px;
   background-color: #0772ff;
   padding: 7px;
   color: white;
   border-radius: 5px;
-  margin: 5px;
 }
 
 .addButtonSection {
